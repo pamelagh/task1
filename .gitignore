@@ -1,0 +1,7 @@
+jenkins.war
+notes.txt
+task1
+task1.pub
+.terraform/
+terraform.tfstate
+terraform.tfstate.backup
