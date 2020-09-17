@@ -6,17 +6,15 @@ Over the same infrastructure as Level 2, deploy a custom Jenkins image, based on
 * From the EC2 instance, access Jenkins and create a simple freestyle job.
 
 
-**STEPS TO RUN**
-  1. Download the jenkins.war from https://www.jenkins.io/download/ (the Generic Java package) and add it the project's root repository.
-
-  2. Generate SSH private and public keys named `task1` on project's root repository.
+**STEPS TO RUN**:
+  1. Generate SSH private and public keys named `task1` on project's root repository.
   
-  3. SSH from local machine to VPC with
+  2. SSH from local machine to VPC with
   ```
   ssh -i <task1_path> ec2-user@<public IP from AWS console>
   ```
   
-  4. Run the following commands to configure AWS and pull the docker image:
+  3. Run the following commands to configure AWS and pull the docker image:
   ```
   # configure AWS
   aws configure set aws_access_key_id <aws_access_key_id>
@@ -34,12 +32,12 @@ Over the same infrastructure as Level 2, deploy a custom Jenkins image, based on
   docker run --name localjenkins -p 80:8080 -p 50000:50000 <ecr_repository_url>:latest
   ```
 
-  5. To start the Jenkins container:
+  4. To start the Jenkins container:
   ```
   docker start localjenkins
   ```
 
-  6. Look for the EC2 instance on the AWS console and on any browser, and using the public IP: `X.X.X.X:80/jenkins` for the Jenkins interface.
+  5. Look for the EC2 instance on the AWS console and on any browser, and using the public IP: `X.X.X.X:80/jenkins` for the Jenkins interface.
 
 **Other commands to know**
  

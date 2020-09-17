@@ -37,7 +37,7 @@ WantedBy=multi-user.target\n'\
 >> /etc/systemd/system/tomcat.service
 
 #--------------------------- Add Jenkins
-ADD jenkins.war /usr/local/tomcat/webapps/
+RUN wget https://get.jenkins.io/war-stable/2.249.1/jenkins.war -O /usr/local/tomcat/webapps/jenkins.war
 WORKDIR /usr/local/tomcat/webapps/
 
 # 4. Allow traffic to the port 8080
